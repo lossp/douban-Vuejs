@@ -6,7 +6,12 @@
 <script>
     import FooterItem from './Footer-item'
     export default{
-        props:['value']
+        props:['value'],
+        computed:{
+            vaule(){
+                return this.$route.matched[0].name
+            }
+        }
     }
 </script>
 <style lang="scss">

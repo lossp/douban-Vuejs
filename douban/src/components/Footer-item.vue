@@ -1,5 +1,5 @@
 <template>
-    <a class="item" :class="{active: isActive}" @click="$parent.$emit('input',id)">
+    <a class="item" :class="{active: isActive}" @click="goToRouter">
         <span class="item-icon"><slot name="icon-normal"></slot></span>
         <span class="item-text"><slot></slot></span>
     </a>
@@ -10,7 +10,23 @@
 <script>
     import '../../static/javascripts/iconfont.js'
     export default{
-        props:['id'],
+        props:{
+            id:{
+                type: String
+            },
+            isRouter:{
+                type: Boolean,
+                default: false
+            }
+        },
+        methods:{
+            goToRouter(){
+                this.$parent.$emit('input',this.id)
+                if(this.isRouter){
+                    this.$router.push(this.id)
+                }
+            }
+        },
         computed:{
             isActive(){
                 if(this.$parent.value === this.id){
