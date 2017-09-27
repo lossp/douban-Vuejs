@@ -54,6 +54,9 @@ export default {
     return{
       select: "Index"
     }
+  },
+  mounted:function(){
+    this.$router.push('/')
   }
 }
 </script>

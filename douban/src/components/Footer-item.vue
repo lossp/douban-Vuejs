@@ -24,11 +24,13 @@
                 this.$parent.$emit('input',this.id)
                 if(this.isRouter){
                     this.$router.push(this.id)
+                    console.log(this.$router)
                 }
             }
         },
         computed:{
             isActive(){
+                
                 if(this.$parent.value === this.id){
                     return true;
                 }
