@@ -17,9 +17,9 @@
                 <a href="javascript:;" slot="cell-right"><img src="../assets/images/ic_arrow_gray_small.png" alt="提醒"></a>
         </Cell>
 
-        <CellMedia author="作者:大象公会" column="来自栏目:广播精选" img="https://qnmob2.doubanio.com/img/files/file-1489047494.jpg">
-            <span slot="title">个人意见：为什么中国没有鲍勃·迪伦这样的民谣歌手</span>
-            <span slot="describe">我们这一代人的成长年代，真正的诗歌课从来都是缺席的。</span>
+        <CellMedia :author="item.target.author.name" :column="item.source_cn" :img="item.target.cover_url" v-for="(item,index) in hotData" :key="item.id" :url="item.target.uri">
+            <span slot="title">{{item.title}}</span>
+            <span slot="describe">{{item.target.desc}}</span>
         </CellMedia>
     </div>
 </template>
@@ -42,7 +42,38 @@
             Swiper,
             Cell,
             CellMedia
+        },
+        data(){
+            return{
+                recommendData:[],
+                hotData:[]
+            }
+        },
+        created(){
+            this.fetchData();
+        },
+        methods:{
+            fetchData() {
+                this.axios.get('/api/homeData').then((response) => {
+                let data = response.data.data.recommend_feeds;
+                let recommend = [];
+                let hot = [];
+                for (var i in data) {
+                    if (data[i].card && data[i].card.name == '为你推荐') {
+                    recommend.push(data[i]);
+                    } else {
+                    hot.push(data[i]);
+                    }
+                }
+
+                this.recommendData = recommend;
+                this.hotData = hot;
+                console.log(1122)
+                console.log(hot)
+                })
+            }
         }
+        
     }
 </script>
 

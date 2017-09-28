@@ -1,6 +1,6 @@
 <template>
     <div class="cell-media-wrap">
-        <a href="javascript:;">
+        <a :href="url">
         <div class="cell-media-top">
             <div class="cell-media">
                 <div class="cell-title">
@@ -23,7 +23,7 @@
 
 <script>
     export default{
-        props:['author', 'column', 'img']
+        props:['author', 'column', 'img', 'url']
     }
 </script>
 

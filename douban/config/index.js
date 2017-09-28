@@ -22,6 +22,15 @@ module.exports = {
     bundleAnalyzerReport: process.env.npm_config_report
   },
   dev: {
+    proxyTable: {
+      '/api': {
+        target: 'https://api.douban.com/v2',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    },
     env: require('./dev.env'),
     port: 8080,
     autoOpenBrowser: true,
