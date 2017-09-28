@@ -32,14 +32,13 @@
 
 <style lang="scss">
 
-    .head{
+    header{
         display: flex;
         align-items:center;
         height: 48px;
         padding: 0 10px;
         background:#fff;
         color:#42bd56;
-        border-bottom:1px solid #eee;
         >.header-button{
             width: 80px;
             align-items: stretch;
