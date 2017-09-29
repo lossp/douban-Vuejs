@@ -14,7 +14,7 @@
                 <a href="javascript:;" slot="cell-right"><img src="../assets/images/ic_arrow_gray_small.png" alt="提醒"></a>
         </Cell>
         <Cell title="设置">
-                <a href="javascript:;" slot="cell-right"><img src="../assets/images/ic_arrow_gray_small.png" alt="提醒"></a>
+                <a href="javascript:;" slot="cell-right"><img src="../assets/images/ic_arrow_gray_small.png" alt="设置"></a>
         </Cell>
 
         <CellMedia :author="item.target.author.name" :column="item.source_cn" :img="item.target.cover_url" v-for="(item,index) in hotData" :key="item.id" :url="item.target.uri">
@@ -68,8 +68,6 @@
 
                 this.recommendData = recommend;
                 this.hotData = hot;
-                console.log(1122)
-                console.log(hot)
                 })
             }
         }

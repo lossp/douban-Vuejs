@@ -63,6 +63,9 @@
             .cell-detail{
                 font-size: 12px;
                 padding-top: 12px;
+                height: 4em;
+                overflow: hidden;
+                text-overflow:ellipsis;
                 color: #939393;
                 text-align: left;
             }
