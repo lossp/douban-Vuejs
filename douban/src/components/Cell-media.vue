@@ -16,6 +16,7 @@
         <div class="cell-media-bottom">
             <p v-if="author">作者：{{author}}</p>
             <p v-if="column">{{column}}</p>
+            <p v-if="director">导演:{{director}}</p>
         </div>
         </a>
     </div>
@@ -23,7 +24,7 @@
 
 <script>
     export default{
-        props:['author', 'column', 'img', 'url']
+        props:['author', 'column', 'img', 'url','director']
     }
 </script>
 

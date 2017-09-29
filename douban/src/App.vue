@@ -21,7 +21,7 @@
                     <svg class="icon" aria-hidden="true" slot="icon-normal">
                             <use xlink:href="#icon-guangbo"></use>
                     </svg> 
-                    广播
+                    电影
             </FooterItem>
 
             <FooterItem id="Group" isRouter>

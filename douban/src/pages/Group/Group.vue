@@ -10,9 +10,11 @@
 <script>
     import Topbar from '../../components/Header'
     export default{
-        name:'audioBook',
+        name:'music',
         components:{
             Topbar
-        }
+        },
+ 
     }
 </script>
+

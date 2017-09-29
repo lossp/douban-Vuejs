@@ -48,7 +48,6 @@
                     books.push(data[i])
                 }
                 this.bookData = books
-                console.log(books)
                 })
             }
         }
