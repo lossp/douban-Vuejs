@@ -17,6 +17,8 @@
             <p v-if="author">作者：{{author}}</p>
             <p v-if="column">{{column}}</p>
             <p v-if="director">导演:{{director}}</p>
+            <p v-if="singer">歌手:{{singer}}</p>
+            <p v-if="sty">风格:{{sty}}</p>
         </div>
         </a>
     </div>
@@ -24,7 +26,7 @@
 
 <script>
     export default{
-        props:['author', 'column', 'img', 'url','director']
+        props:['author', 'column', 'img', 'url','director','singer','sty']
     }
 </script>
 

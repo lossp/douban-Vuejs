@@ -1,14 +1,15 @@
 <template>
     <div>
         <Topbar title="豆瓣app" :bg="true" :fixed="true">
-            <a href="javascript:;" slot="left">&lt 返回</a>
-            <a href="javascript:;" slot="right">分享</a>
+            <!-- <a href="javascript:;" slot="left">&lt 返回</a>
+            <a href="javascript:;" slot="right">分享</a> -->
         </Topbar>
-        
+        <div id='container'>
         <CellMedia :director="item.directors.name" :column="item.genres.toString()" :img="item.images.large" v-for="(item,index) in movieData" :key="item.index" :url="item.alt">
             <span slot="title">{{item.title}}</span>
             <span slot="describe">{{item.year}}</span>
         </CellMedia>
+        </div>
     </div>
 </template>
 
@@ -47,3 +48,8 @@
 
 
 </script>
+<style lang="scss">
+    #container{
+        margin-top: 49px;
+    }
+</style>

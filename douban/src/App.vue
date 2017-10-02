@@ -28,7 +28,7 @@
                     <svg class="icon" aria-hidden="true" slot="icon-normal">
                             <use xlink:href="#icon-xiaozu"></use>
                     </svg> 
-                    小组
+                    音乐
             </FooterItem>
 
             <FooterItem id="Mine" isRouter>
