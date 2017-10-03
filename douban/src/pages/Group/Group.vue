@@ -25,23 +25,33 @@
         },
         data(){
             return{
-                hitMusics : []
+                hitMusics : [],
+                start:0,
+                count: 10
             }
         },
         created(){
             this.fetchMusic()
+            let Vue = this;
+            window.addEventListener('scroll',function(){
+                let windowHeight = document.documentElement.clientHeight;
+                let wholeHeight = document.body.clientHeight;
+                let scrollTop = document.documentElement.scrollTop;
+                if( windowHeight + scrollTop >= wholeHeight){
+                    Vue.fetchMusic();
+                }
+            })
         },
         methods:{
             fetchMusic(){
-                let url = 'api/music/search?q=jasonmraz&count=15';
-                let musicData = [];
+                const Vue = this;
+                let url = `api/music/search?q=jasonmraz&count=${Vue.count}&start=${Vue.start}`;
                 this.axios.get(url).then((response)=>{
                     let data = response.data.musics;
                     for(var i in data){
-                        musicData.push(data[i])
+                        Vue.hitMusics.push(data[i])
                     }
-                    this.hitMusics = musicData;
-                    console.log(musicData)
+                    Vue.start += Vue.count
                 })
             }
         }

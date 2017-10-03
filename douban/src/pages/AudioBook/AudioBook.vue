@@ -50,12 +50,10 @@
                 let url = `api/book/search?q=JavaScript&fields=all&count=${Vue.count}&start=${Vue.start}`;
                 this.axios.get(url).then((response) => {
                     console.log(response)
-                let books =[]
                 let data = response.data.books
-                for( var i in data){
-                    books.push(data[i])
+                for( let i in data){
+                    Vue.bookData.push(data[i])
                 }
-                this.bookData = books;
                 Vue.start += Vue.count
                 })
             }
