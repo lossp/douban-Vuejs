@@ -28,5 +28,6 @@
         background: #fff;
         border-top: 1px solid #e4e4e4; 
         z-index: 10;
-    }   
+
+    }
 </style>

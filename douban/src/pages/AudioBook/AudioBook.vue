@@ -21,7 +21,9 @@
         name:'audioBook',
         data(){
             return{
-                bookData:[]
+                bookData:[],
+                count:10,
+                start:0
             }
         },
         components:{
@@ -31,10 +33,21 @@
         },
         created(){
             this.fetchBook()
+            let Vue = this;
+            window.addEventListener('scroll',function(){
+                let windowHeight = document.documentElement.clientHeight;
+                let wholeHeight = document.body.clientHeight;
+                let scrollTop = document.documentElement.scrollTop;
+                if( windowHeight + scrollTop >= wholeHeight){
+                    Vue.fetchBook();
+                    console.log(213)
+                }
+            })
         },
         methods:{
             fetchBook(){
-                let url = 'api/book/search?q=JavaScript&fields=all';
+                const Vue = this;
+                let url = `api/book/search?q=JavaScript&fields=all&count=${Vue.count}&start=${Vue.start}`;
                 this.axios.get(url).then((response) => {
                     console.log(response)
                 let books =[]
@@ -42,7 +55,8 @@
                 for( var i in data){
                     books.push(data[i])
                 }
-                this.bookData = books
+                this.bookData = books;
+                Vue.start += Vue.count
                 })
             }
         }
