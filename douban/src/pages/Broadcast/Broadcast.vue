@@ -31,7 +31,7 @@
                 count: 20
             }
         },
-        created(){
+        mounted(){
             this.fetchMovie()
             let Vue = this;
             window.addEventListener('scroll',function(){

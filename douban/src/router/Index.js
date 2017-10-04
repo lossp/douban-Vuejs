@@ -5,7 +5,6 @@ import Broadcast from '../pages/Broadcast/Broadcast'
 import AudioBook from '../pages/AudioBook/AudioBook'
 import Group from '../pages/Group/Group'
 import Mine from '../pages/Mine/Mine'
-import Shit from '@/components/Shit'
 Vue.use(Router)
 
 export default new Router({
@@ -42,10 +41,6 @@ export default new Router({
     {
       path:'*',
       redirect:'/'
-    },
-    {
-      path:'/shit',
-      component: Shit
     }
   ]
 })

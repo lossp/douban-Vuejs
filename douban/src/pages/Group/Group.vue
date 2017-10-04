@@ -30,7 +30,7 @@
                 count: 10
             }
         },
-        created(){
+        mounted(){
             this.fetchMusic()
             let Vue = this;
             window.addEventListener('scroll',function(){

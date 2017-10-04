@@ -31,12 +31,12 @@
                     音乐
             </FooterItem>
 
-            <FooterItem id="Mine" isRouter>
+            <!-- <FooterItem id="Mine" isRouter>
                     <svg class="icon" aria-hidden="true" slot="icon-normal">
                             <use xlink:href="#icon-wode-copy"></use>
                     </svg> 
                     我的
-            </FooterItem>
+            </FooterItem> -->
         </FooterContainer>
   </div>
 </template>

@@ -31,7 +31,7 @@
             CellMedia,
             Cell
         },
-        created(){
+        mounted(){
             this.fetchBook()
             let Vue = this;
             window.addEventListener('scroll',function(){

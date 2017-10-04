@@ -1,18 +1,19 @@
 <template>
-    <div>
-        <Topbar title="豆瓣app" :bg="true" :fixed="true">
-            <!-- <a href="javascript:;" slot="left">&lt 返回</a>
-            <a href="javascript:;" slot="right">分享</a> -->
-        </Topbar>
-        <div id="container"></div>
-        <Login>
-        </Login>
+    <div class="login">
+        <div class="row">
+            <label>用户名</label>
+            <input type="text" name="user" v-model="account">
+        </div>
+        <div class="row">
+            <label>密 码 </label>   
+            <input type="password" name="password" v-model="password">
+        </div>
+        <button @click="Login">登陆</button>
     </div>
 </template>
 
 <script>
-    import Topbar from '../../components/Header'
-    import Login from '../../components/Login'
+    import ElementUI from 'element-ui'
     export default{
         name:"register",
         data(){
@@ -73,24 +74,7 @@
             submitForm(formName){
                 this.$refs[formName].validate((valid)=>{
                     if(valid){
-                        Axios.post('http://localhost:3000/register', data)
-                        .then(res => {
-                            console.log(res.data)
-                            if (res.data.code === 0) {
-                                this.$message({
-                                    showClose: true,
-                                    message: '注册成功',
-                                    type: 'success'
-                                })
-                                router.push({name: 'Login'})
-                            } else {
-                                this.$message({
-                                    showClose: true,
-                                    message: '注册失败',
-                                    type: 'error'
-                                })
-                            }
-                        })
+                        
                     }else{
                         return false
                     }
@@ -100,8 +84,37 @@
     }
 </script>
 
-<style lang="scss"> 
-    #container{
-        margin-top: 49px;
+<style lang="scss">
+    .login{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .row{
+            margin-top:20px;
+        }
+        button{
+            margin-top: 24px;
+            padding: 4px;
+            border: 1px solid #eee;
+        }
+    }
+
+    input{
+        border: 1px solid #eee;
+        box-sizing: border-box;
+        text-align:center;
+        font-size:1.4em;
+        height:1.8em;
+        border-radius:4px;
+        border:1px solid #c8cccf;
+        color:#6a6f77;
+        -web-kit-appearance:none;
+        -moz-appearance: none;
+        display:block;
+        outline:0;
+        padding:0 1em;
+        text-decoration:none;
+        width:100%;
     }
 </style>
