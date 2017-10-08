@@ -45,10 +45,9 @@
             })
         },
         methods:{
-          
             fetchBook(){
                 const Vue = this;
-                let url = `https://api.douban.com/v2/book/search?q=JavaScript&fields=all&count=${Vue.count}&start=${Vue.start}`;
+                let url = `api/book/search?q=JavaScript&fields=all&count=${Vue.count}&start=${Vue.start}`;
                 this.axios.get(url).then((response) => {
                     console.log(response)
                 let data = response.data.books
