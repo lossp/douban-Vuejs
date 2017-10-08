@@ -5,14 +5,13 @@
             <a href="javascript:;" slot="right">分享</a> -->
         </Topbar>
         <div id="container"></div>
-        <Login>
-        </Login>
+
     </div>
 </template>
 
 <script>
     import Topbar from '../../components/Header'
-    import Login from '../../components/Login'
+
     export default{
         name:"register",
         data(){
